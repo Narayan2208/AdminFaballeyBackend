@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
 
+import "./App.css";
+import Sidebar from "../src/component/Sidebar";
+import Navbar from "./component/Navbar";
+import { Box } from "@chakra-ui/react";
+import { useContext } from "react";
+import { myContext } from "./context/AuthContext";
+import AllAdmins from "./component/AllAdmins.jsx";
+import Products from "./component/Products";
 function App() {
+  let {  isBool, isBool2 } = useContext(myContext);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Sidebar />
+      <Box display="flex" justifyContent="space-between">
+        <Box w={"15vw"} h={"100vh"}></Box>
+        {isBool ? <AllAdmins /> : ""}
+        {isBool2 ? <Products /> : ""}
+      </Box>
+    </>
   );
 }
 
