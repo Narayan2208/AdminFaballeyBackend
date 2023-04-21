@@ -17,13 +17,10 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1",
-<<<<<<< HEAD
     "react-toastify": "^9.1.2",
-=======
     "redux": "^4.2.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.2",
->>>>>>> d11c3b5aee9e03e7c671ae501b993581306ec10d
     "web-vitals": "^2.1.4"
   },
   "scripts": {

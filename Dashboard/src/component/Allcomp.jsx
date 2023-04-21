@@ -19,7 +19,6 @@ function Allcomp() {
       {isBool ? <AllAdmins /> : ""}
       {isBool2 ? <Products /> : ""}
     </Box>
-    <Login/>
     </>
   )
 }

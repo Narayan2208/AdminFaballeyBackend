@@ -18,10 +18,14 @@ const Login = () => {
   const [password, setPassword] = useState("");
   let {    setSuccess } = useContext(myContext);
   const toast = useToast();
+  let login=localStorage.getItem("logged-in")||false
+  setSuccess(login)
+  console.log("login: ", login);
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (username === "admin" && password === "admin") {
+    if ((username === "admin" && password === "admin")||login) {
+      localStorage.setItem("logged-in",true)
       toast({
         title: "Login successful",
         status: "success",

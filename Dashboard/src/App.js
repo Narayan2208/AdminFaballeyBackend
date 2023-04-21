@@ -9,7 +9,6 @@ function App() {
   let {  isSuccess } = useContext(myContext);
   return (
     <>
-   
     {isSuccess ?  <Allcomp/> : <Login/>}
     </>
   );
