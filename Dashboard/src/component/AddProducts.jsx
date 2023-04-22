@@ -48,6 +48,7 @@ function AddProducts() {
         console.log(error);
       });
       // let res=await axios.post("https://backend-faballey.vercel.app/faballey/product",obj)
+      // let res=await axios.post("https://backend-faballey.vercel.app/faballey/product",obj)
 
       // let data = await res.json();
       // console.log("data: ", data);
