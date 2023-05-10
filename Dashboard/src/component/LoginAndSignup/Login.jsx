@@ -10,7 +10,7 @@ import {
   Text,
   useToast,
 } from "@chakra-ui/react";
-import { FaUser, FaLock } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 import {useNavigate} from 'react-router-dom'
 import { useContext } from "react";
 import { myContext } from "../../context/AuthContext";

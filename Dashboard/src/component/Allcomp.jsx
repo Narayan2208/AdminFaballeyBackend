@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { myContext } from '../context/AuthContext';
 import AllAdmins from './AllAdmins';
 import Products from './Products';
-import Login from './LoginAndSignup/Login';
+
 function Allcomp() {
     let {  isBool, isBool2 } = useContext(myContext);
   return (

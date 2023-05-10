@@ -1,14 +1,30 @@
 import React, { useContext } from "react";
-import { Image, Box, Flex, Text, Button, Spacer } from "@chakra-ui/react";
+import {
+  Image,
+  Box,
+  Flex,
+  Text,
+  Button,
+  Spacer,
+  useToast,
+} from "@chakra-ui/react";
 import { myContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 function Navbar() {
-  const navigate = useNavigate()
-  let {    setSuccess } = useContext(myContext);
+  const navigate = useNavigate();
+  const toast = useToast();
+  let { setSuccess } = useContext(myContext);
   return (
     <>
-      <Flex zIndex={"10000"} backgroundColor="white" position="sticky" top="0" p={"7px"} boxShadow={"base"} >
+      <Flex
+        zIndex={"10000"}
+        backgroundColor="white"
+        position="sticky"
+        top="0"
+        p={"7px"}
+        boxShadow={"base"}
+      >
         <Box display="flex" justifyContent="space-between" w="62%">
           <Image
             padding={1}
@@ -16,12 +32,22 @@ function Navbar() {
           />
           <Text fontSize="30px">Dashboard</Text>
         </Box>
-        <Spacer/>
-        <Button colorScheme="red" onClick={()=>{
-          localStorage.setItem("logged-in",false)
-          setSuccess(false)
-          navigate("/")
-        }}>Logout</Button>
+        <Spacer />
+        <Button
+          colorScheme="red"
+          onClick={() => {
+            localStorage.setItem("logged-in", false);
+            setSuccess(false);
+            toast({
+              title: "Admin Logout Successful",
+              status: "success",
+              isClosable: true,
+            });
+            navigate("/");
+          }}
+        >
+          Logout
+        </Button>
       </Flex>
     </>
   );
