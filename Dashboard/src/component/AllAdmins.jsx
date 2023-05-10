@@ -33,11 +33,12 @@ function AllAdmins() {
         w="90%"
         mb="5px"
         background="white"
+        
         textAlign="center"
         color={"blue"}
       >
         <Text fontWeight="bolder" fontSize="30px" p="5px">
-          All Admins
+          All Users
         </Text>
       </Box>
       <Box h="100vh" margin="auto" textAlign="center" w="80vw">

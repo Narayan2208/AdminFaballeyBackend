@@ -11,6 +11,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { FaUser, FaLock } from "react-icons/fa";
+import {useNavigate} from 'react-router-dom'
 import { useContext } from "react";
 import { myContext } from "../../context/AuthContext";
 const Login = () => {
@@ -22,9 +23,10 @@ const Login = () => {
   setSuccess(login)
   console.log("login: ", login);
 
+  const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
-    if ((username === "admin" && password === "admin")||login) {
+    if ((username === "admin" && password === "admin")) {
       localStorage.setItem("logged-in",true)
       toast({
         title: "Login successful",
@@ -32,6 +34,8 @@ const Login = () => {
         isClosable: true,
       });
       setSuccess(true);
+      navigate("/faballey");
+
     } else {
       toast({
         title: "Invalid credentials",
